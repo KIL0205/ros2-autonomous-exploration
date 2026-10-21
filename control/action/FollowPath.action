@@ -1,0 +1,12 @@
+# Goal
+nav_msgs/Path path
+
+---
+# Result
+bool success
+string message
+
+---
+# Feedback
+uint32 current_index
+geometry_msgs/PoseStamped current_target

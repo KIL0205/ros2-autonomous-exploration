@@ -1,0 +1,52 @@
+amcl:
+  ros__parameters:
+    use_sim_time: true
+
+    # Frames
+    global_frame_id: "map"
+    odom_frame_id: "odom"
+    base_frame_id: "base_link"
+    scan_topic: "scan"
+
+    # Filter + particle settings
+    min_particles: 500
+    max_particles: 2000
+    pf_err: 0.05
+    pf_z: 0.99
+    resample_interval: 1
+
+    initial_cov_xx: 40.0      # 25 m^2 variance (5m std dev in x)
+    initial_cov_yy: 40.0      # 25 m^2 variance (5m std dev in y)
+    initial_cov_aa: 3.00      # ~(pi/2)^2 variance (~90° std dev)
+    set_initial_pose: true
+    # initial_pose:
+    #   x: 0.75
+    #   y: 0.75
+    #   z: 0.0
+    #   yaw: 0.0
+
+    alpha1: 0.2
+    alpha2: 0.2
+    alpha3: 0.2
+    alpha4: 0.2
+
+    # Sensor model
+    laser_model_type: "likelihood_field"
+    z_hit: 0.5
+    z_short: 0.05
+    z_max: 0.05
+    z_rand: 0.5
+    sigma_hit: 0.2
+    lambda_short: 0.1
+    laser_likelihood_max_dist: 2.0
+
+    # Beam skipping
+    beam_skip_distance: 0.5
+    beam_skip_threshold: 0.3
+    beam_skip_error_threshold: 0.9
+
+    transform_tolerance: 1.0
+    recovery_alpha_slow: 0.0
+    recovery_alpha_fast: 0.0
+    save_pose_rate: 0.5
+    use_map_topic: true
